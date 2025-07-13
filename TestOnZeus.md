@@ -76,9 +76,11 @@ ssh punetid@zeus.cs.pacificu.edu
 You should now see **zeus** in the prompt
 
 ```
-
+YOU@zeus>
 ```
 
+Get your code from GitHub
+```
 mkdir cs300f25 # just do this once this semester
 cd cs300f25
 git clone git@github.com:CS300F25-PACU/character_static_stack-will4614.git
