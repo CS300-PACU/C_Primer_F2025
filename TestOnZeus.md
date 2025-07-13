@@ -32,7 +32,9 @@
 
   * [GitHub SSH Keys](https://github.com/settings/keys) - [https://github.com/settings/keys](https://github.com/settings/keys)
   * New SSH Key
-  * Copy and pasteid_ed25519.pub to Key
+  * Copy and paste **id_ed25519.pub** to Key
+	  * This your *public* key
+    * Never give away your *private* key: id_ed25519
   * Give the key a title: Zeus
   * Add SSH Key
 
