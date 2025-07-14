@@ -1,6 +1,10 @@
 #include <gtest/gtest.h>
 
-#include "../include/howToTest.h"
+extern "C" {
+
+	#include "../include/howToTest.h"
+
+}
 
 #define SIZE 10
 #define LARGE_SIZE 100
@@ -21,7 +25,43 @@ TEST (TestSuite, TestAtMid) {
   EXPECT_EQ (aMidMax[5], findTheMaxInAnArray(aMidMax, SIZE));
 }
 
+TEST (TestSuite, TestCircleRadius) {
+	Circle sCirc;
+	const double RADIUS = 300.0;
+	double radius;
 
+	EXPECT_TRUE (circSetRadius(&sCirc, RADIUS));
+
+	EXPECT_TRUE (circGetRadius(&sCirc, &radius));
+	EXPECT_EQ (radius, RADIUS);
+}
+
+TEST (TestSuite, TestCircleArea) {
+	Circle sCirc;
+	const double RADIUS = 300.0;
+	double area;
+
+	EXPECT_TRUE (circSetRadius(&sCirc, RADIUS));
+
+	EXPECT_TRUE (circGetArea(&sCirc, &area));
+	EXPECT_EQ (area, M_PI * RADIUS * RADIUS);
+}
+
+TEST (TestSuite, TestCircleInvalidRadius) {
+	Circle sCirc;
+
+	EXPECT_FALSE (circSetRadius(&sCirc, -1.1));
+	EXPECT_FALSE (circSetRadius(&sCirc, -0.1));
+}
+
+TEST (TestSuite, TestCircleInvalidParams) {
+	Circle sCirc;
+	double area;
+
+	EXPECT_DEATH(circGetArea(&sCirc, NULL), ".*");
+	EXPECT_DEATH(circGetArea(NULL, &area), ".*");
+	EXPECT_DEATH(circGetArea(NULL, NULL), ".*");
+}
 
 //TEST (TestSuite, ExpectException) {
 //  EXPECT_THROW( methodThatThrows( 'A'), std::invalid_argument);

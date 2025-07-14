@@ -9,6 +9,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h> // INT_MAX INT_MIN
+#include <stdbool.h>
+#include "../include/howToTest.h"
 
 #define SIZE 10
 #define LARGE_SIZE 100
@@ -53,9 +55,9 @@ int findTheMaxInAnArray(int aData[], const int size) {
 // 	assert(SIZE == findTheMaxInAnArray(aDecreasing, SIZE), "Decreasing Array");
 // 	assert(aMidMax[5] == findTheMaxInAnArray(aMidMax, SIZE), "MidMax Array");
 
- 	int aSmallArray[1] = {9};
- 	int aSame[SIZE] = {2, 2, 2, 2, 2, 2, 2, 2, 2, 2};
- 	int aNegatives[SIZE] = {-1, -2, -3, -4, -5, -6, -7, -8, -9, -10};
+ 	// int aSmallArray[1] = {9};
+ 	// int aSame[SIZE] = {2, 2, 2, 2, 2, 2, 2, 2, 2, 2};
+ 	// int aNegatives[SIZE] = {-1, -2, -3, -4, -5, -6, -7, -8, -9, -10};
 
 // 	assert(2 == findTheMaxInAnArray(aSame, SIZE), "Same Array");
 // 	assert(-1 == findTheMaxInAnArray(aNegatives, SIZE), "Negatives Array");
@@ -63,24 +65,56 @@ int findTheMaxInAnArray(int aData[], const int size) {
 // 		"Small Array");
 
  	// #include <limits.h>
- 	int aMaxMin[] = {INT_MAX, INT_MIN};
- 	int aMinMax[] = {INT_MIN, INT_MAX};
+ 	// int aMaxMin[] = {INT_MAX, INT_MIN};
+ 	// int aMinMax[] = {INT_MIN, INT_MAX};
 
 // 	assert(INT_MAX == findTheMaxInAnArray(aMaxMin, 2), "MAX MIN");
 // 	assert(INT_MAX == findTheMaxInAnArray(aMinMax, 2), "MIN MAX");
 
- 	int aLargeArray[LARGE_SIZE];
+ 	// int aLargeArray[LARGE_SIZE];
 
- 	for(int i=0; i< LARGE_SIZE; ++i) {	
- 		if( i % 2 == 0) {
- 			aLargeArray[i] = i*2; // [999998] = 2*999998
- 		}
- 		else {
- 			aLargeArray[i] = i; 	// [999999] = 999999
- 		}
- 	}
- 	assert(2*98 == findTheMaxInAnArray(aLargeArray, LARGE_SIZE),
- 		"Large Array");
+ 	// for(int i=0; i< LARGE_SIZE; ++i) {	
+ 	// 	if( i % 2 == 0) {
+ 	// 		aLargeArray[i] = i*2; // [999998] = 2*999998
+ 	// 	}
+ 	// 	else {
+ 	// 		aLargeArray[i] = i; 	// [999999] = 999999
+ 	// 	}
+ 	// }
+ 	// assert(2*98 == findTheMaxInAnArray(aLargeArray, LARGE_SIZE),
+ 	// 	"Large Array");
 
 //   return EXIT_SUCCESS;
 // }
+
+
+bool circSetRadius(Circle *psCirc, double radius) {
+	if (NULL == psCirc) {
+		exit(-1);
+	}
+	if (radius < 0.0) {
+		return false;
+	}
+	psCirc->radius = radius;
+	return true;
+}
+
+bool circGetRadius(Circle *psCirc, double *pRadius) {
+	if (NULL == psCirc || NULL == pRadius) {
+		exit(-1);
+	}
+
+	*pRadius = psCirc->radius;
+	return true;
+}
+
+bool circGetArea(Circle *psCirc, double *pArea) {
+	if (NULL == psCirc || NULL == pArea) {
+		exit(-1);
+	}
+	if (psCirc->radius < 0) {
+		return false;
+	}
+	*pArea = M_PI * psCirc->radius * psCirc->radius;
+	return true;
+}

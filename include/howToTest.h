@@ -7,4 +7,15 @@
  Purpose:				Demonstrate C topics: testing
  ****************************************************************************/
 
+#include <math.h>
+
 int findTheMaxInAnArray(int aData[], const int size);
+
+typedef struct Circle {
+	double radius;
+	int x, y;
+} Circle;
+
+bool circSetRadius(Circle *psCirc, double radius);
+bool circGetRadius(Circle *psCirc, double *pRadius);
+bool circGetArea(Circle *psCirc, double *pArea);
