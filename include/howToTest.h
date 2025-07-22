@@ -7,8 +7,6 @@
  Purpose:				Demonstrate C topics: testing
  ****************************************************************************/
 
-#include <math.h>
-
 int findTheMaxInAnArray(int aData[], const int size);
 
 typedef struct Circle {

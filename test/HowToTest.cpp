@@ -3,6 +3,7 @@
 extern "C" {
 
 	#include "../include/howToTest.h"
+	#include <math.h>
 
 }
 

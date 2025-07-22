@@ -11,6 +11,7 @@
 #include <limits.h> // INT_MAX INT_MIN
 #include <stdbool.h>
 #include "../include/howToTest.h"
+#include <math.h>
 
 #define SIZE 10
 #define LARGE_SIZE 100
