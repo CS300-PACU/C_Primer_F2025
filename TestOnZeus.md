@@ -98,7 +98,7 @@ rm v1.15.2.tar.gz;
 * Run unit tests from the command line:
    * Build the test cases
    ```
-   export CXX=`which clang++-16`;
+   export CXX=`which clang++-16  -fstandalone-debug -g`;
    echo $CXX;
    cmake -S . -B ./build;
    cmake --build build --target clean;
