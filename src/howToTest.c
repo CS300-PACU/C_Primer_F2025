@@ -37,58 +37,6 @@ int findTheMaxInAnArray(int aData[], const int size) {
 	return max;
 }
 
-//  /****************************************************************************
-//   Function: 	 	main
-
-//   Description: 	Test a few functions
-
-//   Parameters:		argc - the number of command line arguments
-//                	argv - the actual command line arguments
-
-//   Returned:	 		EXIT_SUCCESS
-//   ****************************************************************************/
-// int main (int argc, char* argv[]) {
-// 	int aIncreasing[SIZE] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-// 	int aDecreasing[SIZE] = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
-// 	int aMidMax[SIZE] = {10, 1, 8, 17, 5, 100, 14, 30, 21, 11};
-	
-// 	assert(SIZE-1 == findTheMaxInAnArray(aIncreasing, SIZE), "Increasing Array");
-// 	assert(SIZE == findTheMaxInAnArray(aDecreasing, SIZE), "Decreasing Array");
-// 	assert(aMidMax[5] == findTheMaxInAnArray(aMidMax, SIZE), "MidMax Array");
-
- 	// int aSmallArray[1] = {9};
- 	// int aSame[SIZE] = {2, 2, 2, 2, 2, 2, 2, 2, 2, 2};
- 	// int aNegatives[SIZE] = {-1, -2, -3, -4, -5, -6, -7, -8, -9, -10};
-
-// 	assert(2 == findTheMaxInAnArray(aSame, SIZE), "Same Array");
-// 	assert(-1 == findTheMaxInAnArray(aNegatives, SIZE), "Negatives Array");
-// 	assert(aSmallArray[0] == findTheMaxInAnArray(aSmallArray, SIZE),
-// 		"Small Array");
-
- 	// #include <limits.h>
- 	// int aMaxMin[] = {INT_MAX, INT_MIN};
- 	// int aMinMax[] = {INT_MIN, INT_MAX};
-
-// 	assert(INT_MAX == findTheMaxInAnArray(aMaxMin, 2), "MAX MIN");
-// 	assert(INT_MAX == findTheMaxInAnArray(aMinMax, 2), "MIN MAX");
-
- 	// int aLargeArray[LARGE_SIZE];
-
- 	// for(int i=0; i< LARGE_SIZE; ++i) {	
- 	// 	if( i % 2 == 0) {
- 	// 		aLargeArray[i] = i*2; // [999998] = 2*999998
- 	// 	}
- 	// 	else {
- 	// 		aLargeArray[i] = i; 	// [999999] = 999999
- 	// 	}
- 	// }
- 	// assert(2*98 == findTheMaxInAnArray(aLargeArray, LARGE_SIZE),
- 	// 	"Large Array");
-
-//   return EXIT_SUCCESS;
-// }
-
-
 bool circSetRadius(Circle *psCirc, double radius) {
 	if (NULL == psCirc) {
 		exit(-1);
